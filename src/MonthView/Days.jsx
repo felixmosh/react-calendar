@@ -11,6 +11,7 @@ import Day from './Day';
 
 import { getDayOfWeek } from '../shared/dates';
 import { isCalendarType, tileGroupProps } from '../shared/propTypes';
+import { isRTL } from '../shared/utils';
 
 export default function Days(props) {
   const {
@@ -76,6 +77,7 @@ export default function Days(props) {
       }}
       dateType="day"
       end={end}
+      isRTL={isRTL(calendarType)}
       offset={offset}
       start={start}
       tile={Day}

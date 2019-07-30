@@ -115,3 +115,5 @@ export function getTileClasses({
 
   return classes;
 }
+
+export const isRTL = calendarType => ['Hebrew', 'Arabic'].indexOf(calendarType) > -1;
