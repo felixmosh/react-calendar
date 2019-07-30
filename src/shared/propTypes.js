@@ -107,6 +107,7 @@ export const tileGroupProps = {
     PropTypes.func,
     PropTypes.node,
   ]),
+  wrapTile: PropTypes.func,
   value: isValue,
   valueType: PropTypes.string,
 };

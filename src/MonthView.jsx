@@ -106,4 +106,5 @@ MonthView.propTypes = {
   onMouseLeave: PropTypes.func,
   showFixedNumberOfWeeks: PropTypes.bool,
   showWeekNumbers: PropTypes.bool,
+  wrapTile: PropTypes.func,
 };
