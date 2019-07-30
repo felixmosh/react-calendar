@@ -49,6 +49,7 @@ export default class Tile extends Component {
       onMouseOver,
       style,
       tileDisabled,
+      wrapTile,
       view,
     } = this.props;
     const { tileClassName, tileContent } = this.state;
@@ -69,9 +70,11 @@ export default class Tile extends Component {
       >
         {formatAbbr
           ? (
-            <abbr aria-label={formatAbbr(locale, date)}>
-              {children}
-            </abbr>
+            wrapTile(
+              <abbr aria-label={formatAbbr(locale, date)}>
+                {children}
+              </abbr>,
+            )
           )
           : children}
         {tileContent}
