@@ -17,6 +17,8 @@ export function between(value, min, max) {
   return value;
 }
 
+export const isRTL = calendarType => ['Hebrew', 'Arabic'].indexOf(calendarType) > -1;
+
 export function isValueWithinRange(value, range) {
   return (
     range[0] <= value
@@ -115,5 +117,3 @@ export function getTileClasses({
 
   return classes;
 }
-
-export const isRTL = calendarType => ['Hebrew', 'Arabic'].indexOf(calendarType) > -1;
