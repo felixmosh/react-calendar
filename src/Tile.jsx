@@ -33,6 +33,20 @@ export default class Tile extends Component {
 
   state = {};
 
+  renderTile() {
+    const {
+      wrapTile, formatAbbr, children, locale, date,
+    } = this.props;
+
+    const TileInner = (
+      <abbr aria-label={formatAbbr(locale, date)}>
+        {children}
+      </abbr>
+    );
+
+    return typeof wrapTile === 'function' ? wrapTile(TileInner, date) : TileInner;
+  }
+
   render() {
     const {
       activeStartDate,
@@ -40,7 +54,6 @@ export default class Tile extends Component {
       classes,
       date,
       formatAbbr,
-      locale,
       maxDate,
       maxDateTransform,
       minDate,
@@ -49,7 +62,6 @@ export default class Tile extends Component {
       onMouseOver,
       style,
       tileDisabled,
-      wrapTile,
       view,
     } = this.props;
     const { tileClassName, tileContent } = this.state;
@@ -69,14 +81,7 @@ export default class Tile extends Component {
         type="button"
       >
         {formatAbbr
-          ? (
-            wrapTile(
-              <abbr aria-label={formatAbbr(locale, date)}>
-                {children}
-              </abbr>,
-              date,
-            )
-          )
+          ? this.renderTile()
           : children}
         {tileContent}
       </button>
