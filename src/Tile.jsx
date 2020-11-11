@@ -84,7 +84,6 @@ export default class Tile extends Component {
       type: 'button',
     } : {};
 
-
     return (
       <ComponentType {...sharedProps} {...specificProps}>
         {formatAbbr

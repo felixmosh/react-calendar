@@ -6,8 +6,6 @@ import {
   getMonthStart,
 } from '@wojtekmaj/date-utils';
 
-import Flex from '../Flex';
-
 import { getDayOfWeek } from '../shared/dates';
 import { formatWeekday, formatShortWeekday as defaultFormatShortWeekday } from '../shared/dateFormatter';
 import { isCalendarType } from '../shared/propTypes';
@@ -49,14 +47,13 @@ export default function Weekdays(props) {
   }
 
   return (
-    <Flex
+    <div
       className={className}
-      count={7}
       onFocus={onMouseLeave}
       onMouseOver={onMouseLeave}
     >
       {weekdays}
-    </Flex>
+    </div>
   );
 }
 
